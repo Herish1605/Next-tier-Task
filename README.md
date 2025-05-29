@@ -21,7 +21,7 @@ A modern React-based project utilizing the latest frontend technologies and tool
 
 2. Start the server:
   
-  npm run start
+  npm run dev
   
 
 ## 📁 Project Structure
