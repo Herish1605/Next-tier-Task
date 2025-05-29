@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --primary-purple: #ad4aff;
+    --primary-blue: #5480f7;
+    --primary-dark-blue: #07071c;
+    --primary-light-blue: #00baea;
+    
+    /* Secondary Colors */
+    --secondary-purple-light: #c456ff;
+    --secondary-blue-light: #16a8ec;
+    --secondary-blue-dark: #120e33;
+    
+    /* Text Colors */
+    --text-white: #ffffff;
+    --text-white-80: #ffffffcc;
+    --text-gray: #7b9292;
+    
+    /* Border Colors */
+    --border-gradient-start: #c456ff;
+    --border-gradient-middle: #8892cb4c;
+    --border-gradient-end: #c456ff;
+    
+    /* Background Colors */
+    --bg-dark-blue: #07071c;
+    --bg-card-dark: #120e33;
+    --bg-card-light: #1f1f24;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+  }
+  
+  .gradient-purple-blue {
+    @apply bg-gradient-to-r from-[#ad4aff] to-[#5480f7];
+  }
+  
+  .gradient-border {
+    @apply border-2 border-transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-image: linear-gradient(133deg, #c456ff 0%, #8892cb4c 50%, #c456ff 100%);
+  }
+}
+
+@layer utilities {
+  .bg-primary-dark {
+    background-color: var(--primary-dark-blue);
+  }
+  
+  .bg-primary-gradient {
+    background-image: linear-gradient(to right, var(--primary-purple), var(--primary-blue));
+  }
+  
+  .bg-card-gradient {
+    background-image: linear-gradient(150deg, var(--secondary-blue-dark) 0%, var(--secondary-blue-dark) 50%, var(--bg-card-light) 100%);
+  }
+  
+  .text-gradient-purple-blue {
+    background-image: linear-gradient(to bottom, var(--primary-purple), var(--primary-light-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .text-white-80 {
+    color: var(--text-white-80);
+  }
+}
