@@ -19,9 +19,9 @@ const Card = ({
     : "bg-[#120e33]";
   
   const borderClasses = borderGradient 
-    ? "border-2 border-transparent bg-origin-border bg-clip-padding" :"";
-  
-  // This creates the border gradient effect when borderGradient is true
+    ? "border-2 border-transparent bg-origin-border bg-clip-padding" 
+    : "";
+
   const borderGradientStyle = borderGradient ? {
     backgroundImage: "linear-gradient(133deg, #c456ff 0%, #8892cb4c 50%, #c456ff 100%)",
     backgroundOrigin: "border-box",
@@ -35,29 +35,33 @@ const Card = ({
       style={borderGradientStyle}
       {...props}
     >
-      {image && (
-        <div className="w-full">
-          <img src={image} alt={title} className="w-full h-auto" />
+      {children ? (
+        // If children are passed, render them directly — allowing layout flexibility
+        children
+      ) : (
+        // Fallback rendering if no custom children are passed
+        <div className="p-6">
+          {image && (
+            <div className="w-full mb-4">
+              <img src={image} alt={title} className="w-full h-auto" />
+            </div>
+          )}
+
+          {icon && (
+            <div className="mb-4">
+              {icon}
+            </div>
+          )}
+
+          {title && (
+            <h3 className="text-xl font-syne font-semibold text-white mb-2">{title}</h3>
+          )}
+
+          {description && (
+            <p className="text-white/80 font-syne">{description}</p>
+          )}
         </div>
       )}
-      
-      <div className="p-6">
-        {icon && (
-          <div className="mb-4">
-            {icon}
-          </div>
-        )}
-        
-        {title && (
-          <h3 className="text-xl font-syne font-semibold text-white mb-2">{title}</h3>
-        )}
-        
-        {description && (
-          <p className="text-white/80 font-syne">{description}</p>
-        )}
-        
-        {children}
-      </div>
     </div>
   );
 };
