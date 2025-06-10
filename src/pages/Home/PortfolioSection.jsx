@@ -8,23 +8,24 @@ const PortfolioSection = () => {
       id: 1,
       image: "/images/img_lampungbrand.png",
       title: "Brand Logo",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "We designed a bold and memorable brand logo that reflects the essence of the client’s identity.",
       icon: "/images/img_figma.svg"
     },
     {
       id: 2,
       image: "/images/img_lampungbrand_610x410.png",
       title: "Charity Website",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "Empowering communities through support, donations, and volunteer opportunities for lasting change.",
       icon: "/images/img_figma.svg"
     },
     {
       id: 3,
       image: "/images/img_lampungbrand_1.png",
       title: "Finance App",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "Track your spending, manage budgets, and achieve financial goals with ease",
       icon: "/images/img_github.svg"
     }
+    
   ];
   
   const handleSlideChange = (index) => {
